@@ -1,15 +1,13 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-  html {
-    margin: 0;
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
     padding: 0;
-    background: white;
-  }
-
-  body {
     margin: 0;
-    padding: 0;
+    word-wrap: break-word;
   }
 `;
 
