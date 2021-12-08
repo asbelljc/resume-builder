@@ -5,7 +5,7 @@ import TextArea from '../Auxiliary/TextArea';
 
 class Personal extends Component {
   render() {
-    const { info, onChange } = this.props;
+    const { personalData, onChange } = this.props;
 
     return (
       <Section title="Personal">
@@ -13,49 +13,49 @@ class Personal extends Component {
           onChange={(e) => onChange(e)}
           placeholder="First name"
           name="firstName"
-          value={info.firstName}
+          value={personalData.firstName}
         />
         <TextInput
           onChange={(e) => onChange(e)}
           placeholder="Last name"
           name="lastName"
-          value={info.lastName}
+          value={personalData.lastName}
         />
         <TextInput
           onChange={(e) => onChange(e)}
           placeholder="Title"
           name="title"
-          value={info.title}
+          value={personalData.title}
         />
         <TextInput
           onChange={(e) => onChange(e)}
           placeholder="Street address"
           name="streetAddress"
-          value={info.streetAddress}
+          value={personalData.streetAddress}
         />
         <TextInput
           onChange={(e) => onChange(e)}
           placeholder="City / State / Zip"
           name="cityStateZip"
-          value={info.cityStateZip}
+          value={personalData.cityStateZip}
         />
         <TextInput
           onChange={(e) => onChange(e)}
           placeholder="Phone number"
           name="phone"
-          value={info.phone}
+          value={personalData.phone}
         />
         <TextInput
           onChange={(e) => onChange(e)}
           placeholder="Email address"
           name="email"
-          value={info.email}
+          value={personalData.email}
         />
         <TextArea
           onChange={(e) => onChange(e)}
           placeholder="Objective"
           name="objective"
-          value={info.objective}
+          value={personalData.objective}
         />
       </Section>
     );

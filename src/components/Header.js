@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-const Wrapper = styled.header`
+const HeaderWrapper = styled.header`
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -23,9 +23,9 @@ const Title = styled.h1`
 class Header extends Component {
   render() {
     return (
-      <Wrapper>
+      <HeaderWrapper>
         <Title>Resume Builder</Title>
-      </Wrapper>
+      </HeaderWrapper>
     );
   }
 }

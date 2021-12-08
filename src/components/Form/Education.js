@@ -1,9 +1,32 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import EducationItem from './EducationItem';
+import Section from '../Auxiliary/Section';
+import Button from '../Auxiliary/Button';
 
 class Education extends Component {
   render() {
-    return <></>;
+    const { educationData, onChange, onAdd, onDelete } = this.props;
+
+    const educationItems = educationData.map((itemData) => {
+      return (
+        <EducationItem
+          key={itemData.id}
+          id={itemData.id}
+          itemData={itemData}
+          onChange={onChange}
+          onDelete={onDelete}
+        />
+      );
+    });
+
+    return (
+      <Section title="Education">
+        {educationItems}
+        <Button addBtn onClick={onAdd}>
+          +
+        </Button>
+      </Section>
+    );
   }
 }
 

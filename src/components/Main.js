@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Form from './Form/Form';
-import Preview from './Preview/Preview';
+// import Preview from './Preview/Preview';
 // import Personal from './Personal';
 // import Education from './Education';
 // import Experience from './Experience';
@@ -21,7 +21,7 @@ class Main extends Component {
     return (
       <MainWrapper>
         <Form />
-        <Preview />
+        {/* <Preview /> */}
       </MainWrapper>
     );
   }
