@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Form from './Form/Form';
-// import Preview from './Preview/Preview';
-// import Personal from './Personal';
-// import Education from './Education';
-// import Experience from './Experience';
+import Preview from './Preview/Preview';
 
 const MainWrapper = styled.main`
   width: 8.5in;
@@ -21,7 +18,7 @@ class Main extends Component {
     return (
       <MainWrapper>
         <Form />
-        {/* <Preview /> */}
+        <Preview />
       </MainWrapper>
     );
   }
