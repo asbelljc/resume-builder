@@ -34,6 +34,12 @@ class EducationItem extends Component {
         />
         <TextInput
           onChange={(e) => onChange(e, id)}
+          placeholder="Concentration"
+          name="concentration"
+          value={itemData.concentration}
+        />
+        <TextInput
+          onChange={(e) => onChange(e, id)}
           placeholder="Start Date"
           name="startDate"
           value={itemData.startDate}
