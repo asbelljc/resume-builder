@@ -53,9 +53,9 @@ class Personal extends Component {
         />
         <TextArea
           onChange={(e) => onChange(e)}
-          placeholder="Objective"
-          name="objective"
-          value={personalData.objective}
+          placeholder="Summary"
+          name="summary"
+          value={personalData.summary}
         />
       </Section>
     );
