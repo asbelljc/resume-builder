@@ -6,12 +6,12 @@ const HeaderWrapper = styled.div`
   justify-content: space-between;
 `;
 
-const nameTitleWrapper = styled.div`
+const NameAndTitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-const contactWrapper = styled.div`
+const ContactWrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
@@ -30,20 +30,20 @@ class Header extends Component {
 
     return (
       <HeaderWrapper>
-        <nameTitleWrapper>
+        <NameAndTitleWrapper>
           <h1>
             {firstName}
             <br />
             {lastName}
           </h1>
           <span>{title}</span>
-        </nameTitleWrapper>
-        <contactWrapper>
+        </NameAndTitleWrapper>
+        <ContactWrapper>
           <span>{streetAddress}</span>
           <span>{cityStateZip}</span>
           <span>{email}</span>
           <span>{phone}</span>
-        </contactWrapper>
+        </ContactWrapper>
       </HeaderWrapper>
     );
   }
