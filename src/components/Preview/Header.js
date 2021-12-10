@@ -17,6 +17,10 @@ const ContactWrapper = styled.div`
 `;
 
 class Header extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     const {
       firstName,

@@ -6,6 +6,10 @@ import Button from '../Auxiliary/Button';
 const EducationItemWrapper = styled.div``;
 
 class EducationItem extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     const { id, itemData, onChange, onDelete } = this.props;
 
@@ -22,12 +26,6 @@ class EducationItem extends Component {
         />
         <TextInput
           onChange={(e) => onChange(e, id)}
-          placeholder="Location"
-          name="location"
-          value={itemData.location}
-        />
-        <TextInput
-          onChange={(e) => onChange(e, id)}
           placeholder="Degree / Certificate / Diploma"
           name="degree"
           value={itemData.degree}
@@ -37,6 +35,12 @@ class EducationItem extends Component {
           placeholder="Concentration"
           name="concentration"
           value={itemData.concentration}
+        />
+        <TextInput
+          onChange={(e) => onChange(e, id)}
+          placeholder="Location"
+          name="location"
+          value={itemData.location}
         />
         <TextInput
           onChange={(e) => onChange(e, id)}

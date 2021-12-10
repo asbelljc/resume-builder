@@ -6,6 +6,10 @@ import Button from '../Auxiliary/Button';
 const ExperienceItemWrapper = styled.div``;
 
 class ExperienceItem extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     const { id, itemData, onChange, onDelete } = this.props;
 

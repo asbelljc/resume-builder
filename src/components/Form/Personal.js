@@ -4,6 +4,10 @@ import TextInput from '../Auxiliary/TextInput';
 import TextArea from '../Auxiliary/TextArea';
 
 class Personal extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     const { personalData, onChange } = this.props;
 

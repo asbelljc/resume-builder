@@ -4,6 +4,10 @@ import styled from 'styled-components';
 const TextInputWrapper = styled.input``;
 
 class TextInput extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     const { onChange, placeholder, name, value } = this.props;
 

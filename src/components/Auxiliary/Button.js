@@ -4,6 +4,10 @@ import styled, { css } from 'styled-components';
 const ButtonWrapper = styled.button``;
 
 class Button extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     const { addBtn, deleteBtn, resetBtn, onClick, children } = this.props;
 

@@ -6,6 +6,10 @@ const SectionWrapper = styled.section``;
 const Title = styled.h2``;
 
 class Section extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     const { title, children } = this.props;
 

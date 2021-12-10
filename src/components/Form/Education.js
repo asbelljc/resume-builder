@@ -4,6 +4,10 @@ import Section from '../Auxiliary/Section';
 import Button from '../Auxiliary/Button';
 
 class Education extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     const { educationData, onChange, onAdd, onDelete } = this.props;
 

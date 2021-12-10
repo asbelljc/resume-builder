@@ -10,6 +10,10 @@ const FormWrapper = styled.div``;
 const ButtonsWrapper = styled.div``;
 
 class Form extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     const {
       resumeData,

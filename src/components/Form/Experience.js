@@ -4,6 +4,10 @@ import Section from '../Auxiliary/Section';
 import Button from '../Auxiliary/Button';
 
 class Experience extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     const { experienceData, onChange, onAdd, onDelete } = this.props;
 

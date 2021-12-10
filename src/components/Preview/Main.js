@@ -9,6 +9,10 @@ const MainWrapper = styled.div``;
 const Summary = styled.div``;
 
 class Main extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     const { personalData, experienceData, educationData } = this.props;
 

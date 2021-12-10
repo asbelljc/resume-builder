@@ -6,6 +6,10 @@ import Main from './Main';
 const PreviewWrapper = styled.div``;
 
 class Preview extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     const { resumeData } = this.props;
 

@@ -12,6 +12,10 @@ const SchoolAndDateWrapper = styled.div`
 `;
 
 class EducationItem extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     const { itemData } = this.props;
 

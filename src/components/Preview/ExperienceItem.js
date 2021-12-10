@@ -12,6 +12,10 @@ const TitleAndDateWrapper = styled.div`
 `;
 
 class ExperienceItem extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     const { itemData } = this.props;
 
