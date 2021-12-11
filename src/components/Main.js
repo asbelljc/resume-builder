@@ -22,6 +22,15 @@ class Main extends Component {
     super(props);
 
     this.state = emptyResume;
+    this.componentRef = React.createRef();
+
+    this.handleChangePersonal = this.handleChangePersonal.bind(this);
+    this.handleChangeExperience = this.handleChangePersonal.bind(this);
+    this.handleAddExperience = this.handleAddExperience.bind(this);
+    this.handleDeleteExperience = this.handleDeleteExperience.bind(this);
+    this.handleChangeEducation = this.handleChangeEducation.bind(this);
+    this.handleAddEducation = this.handleAddEducation.bind(this);
+    this.handleDeleteEducation = this.handleDeleteEducation.bind(this);
   }
 
   handleChangePersonal(e) {
@@ -116,6 +125,23 @@ class Main extends Component {
         ],
       };
     });
+  }
+
+  handleDeleteEducation(id) {
+    this.setState((prevState) => {
+      const updatedEducation = prevState.education.filter(
+        (educationItem) => educationItem.id !== id
+      );
+      return { ...prevState, education: [...updatedEducation] };
+    });
+  }
+
+  handleLoadSample() {
+    this.setState(sampleResume);
+  }
+
+  handleReset() {
+    this.setState(emptyResume);
   }
 
   render() {
