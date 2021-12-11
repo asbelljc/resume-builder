@@ -26,12 +26,14 @@ class Main extends Component {
     this.componentRef = React.createRef();
 
     this.handleChangePersonal = this.handleChangePersonal.bind(this);
-    this.handleChangeExperience = this.handleChangePersonal.bind(this);
+    this.handleChangeExperience = this.handleChangeExperience.bind(this);
     this.handleAddExperience = this.handleAddExperience.bind(this);
     this.handleDeleteExperience = this.handleDeleteExperience.bind(this);
     this.handleChangeEducation = this.handleChangeEducation.bind(this);
     this.handleAddEducation = this.handleAddEducation.bind(this);
     this.handleDeleteEducation = this.handleDeleteEducation.bind(this);
+    this.handleLoadSample = this.handleLoadSample.bind(this);
+    this.handleReset = this.handleReset.bind(this);
   }
 
   handleChangePersonal(e) {
@@ -165,10 +167,13 @@ class Main extends Component {
           onAddEducation={this.handleAddEducation}
           onDeleteEducation={this.handleDeleteEducation}
           onLoadSample={this.handleLoadSample}
-          onMakePdf={makePdfButton}
+          makePdfButton={makePdfButton}
           onReset={this.handleReset}
         />
-        <Preview resumeData={this.state} ref={this.componentRef} />
+        <Preview
+          resumeData={this.state}
+          ref={(element) => (this.componentRef = element)}
+        />
       </MainWrapper>
     );
   }

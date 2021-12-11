@@ -9,7 +9,7 @@ const sampleResume = {
     cityStateZip: 'Palo Alto, CA 94301',
     phone: '012-345-6789',
     email: 'steve.careers@apple.com',
-    description:
+    summary:
       'Maecenas libero augue, consequat eget felis a, bibendum condimentum elit. Donec mi lorem, porttitor nec sem vel, sagittis vestibulum ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus mattis libero eu metus mattis, nec dapibus felis pellentesque. In hac habitasse platea dictumst. Cras diam.',
   },
   experience: [
@@ -18,7 +18,7 @@ const sampleResume = {
       title: 'Web Developer',
       company: 'Apple Inc.',
       location: 'Cupertino, CA, USA',
-      startDate: '12 / 1996',
+      startDate: 'Dec 1996',
       endDate: 'present',
     },
     {
@@ -26,16 +26,16 @@ const sampleResume = {
       title: 'Junior Developer',
       company: 'Apple Inc.',
       location: 'Cupertino, CA, USA',
-      startDate: '4 / 1976',
-      endDate: '12 / 1996',
+      startDate: 'Apr 1976',
+      endDate: 'Dec 1996',
     },
     {
       id: uuid(),
       title: 'Game Designer',
       company: 'Atari',
       location: 'Sunnyvale, CA, USA',
-      startDate: '1 / 1974',
-      endDate: '4 / 1976',
+      startDate: 'Jan 1974',
+      endDate: 'Apr 1976',
     },
   ],
   education: [
@@ -45,8 +45,8 @@ const sampleResume = {
       degree: 'Bachelor of Science (unfinished)',
       concentration: 'Computer Science',
       location: 'Portland, OR, USA',
-      startDate: '9 / 1972',
-      endDate: '12 / 1972',
+      startDate: 'Sep 1972',
+      endDate: 'Dec 1972',
     },
     {
       id: uuid(),
@@ -54,8 +54,8 @@ const sampleResume = {
       degree: 'High School Diploma',
       concentration: 'Computer Science',
       location: 'Cupertino, CA, USA',
-      startDate: '8 / 1968',
-      endDate: '5 / 1972',
+      startDate: 'Aug 1968',
+      endDate: 'May 1972',
     },
   ],
 };

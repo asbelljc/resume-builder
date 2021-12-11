@@ -3,7 +3,10 @@ import styled from 'styled-components';
 import Header from './Header';
 import Main from './Main';
 
-const PreviewWrapper = styled.div``;
+const PreviewWrapper = styled.div`
+  width: 8.5in;
+  height: 11in;
+`;
 
 class Preview extends Component {
   constructor(props) {

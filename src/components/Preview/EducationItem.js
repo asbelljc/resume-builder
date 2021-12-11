@@ -24,7 +24,7 @@ class EducationItem extends Component {
         <SchoolAndDateWrapper>
           <span>{itemData.school}</span>
           <span>
-            {itemData.startDate} = {itemData.endDate}
+            {itemData.startDate} - {itemData.endDate}
           </span>
         </SchoolAndDateWrapper>
         <span>
