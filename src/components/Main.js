@@ -73,6 +73,31 @@ class Main extends Component {
     });
   }
 
+  handleDeleteExperience(id) {
+    this.setState((prevState) => {
+      const updatedExperience = prevState.experience.filter(
+        (experienceItem) => experienceItem.id !== id
+      );
+      return { ...prevState, experience: [...updatedExperience] };
+    });
+  }
+
+  handleChangeEducation(e, id) {
+    const { name, value } = e.target;
+
+    this.setState((prevState) => {
+      const updatedEducation = prevState.education.map((educationItem) => {
+        if (educationItem.id === id) {
+          return { ...educationItem, [name]: value };
+        } else {
+          return educationItem;
+        }
+      });
+
+      return { ...prevState, education: [...updatedEducation] };
+    });
+  }
+
   render() {
     return (
       <MainWrapper>
