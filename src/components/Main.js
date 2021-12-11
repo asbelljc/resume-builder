@@ -98,6 +98,26 @@ class Main extends Component {
     });
   }
 
+  handleAddEducation() {
+    this.setState((prevState) => {
+      return {
+        ...prevState,
+        education: [
+          ...prevState.education,
+          {
+            id: uuid(),
+            school: '',
+            degree: '',
+            concentration: '',
+            location: '',
+            startDate: '',
+            endDate: '',
+          },
+        ],
+      };
+    });
+  }
+
   render() {
     return (
       <MainWrapper>
