@@ -38,4 +38,26 @@ const sampleResume = {
       endDate: '4 / 1976',
     },
   ],
+  education: [
+    {
+      id: uuid(),
+      school: 'Reed College',
+      degree: 'Bachelor of Science (unfinished)',
+      concentration: 'Computer Science',
+      location: 'Portland, OR, USA',
+      startDate: '9 / 1972',
+      endDate: '12 / 1972',
+    },
+    {
+      id: uuid(),
+      school: 'Homestead High School',
+      degree: 'High School Diploma',
+      concentration: 'Computer Science',
+      location: 'Cupertino, CA, USA',
+      startDate: '8 / 1968',
+      endDate: '5 / 1972',
+    },
+  ],
 };
+
+export default sampleResume;

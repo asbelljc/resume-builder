@@ -25,7 +25,7 @@ class Form extends Component {
       onAddEducation,
       onDeleteEducation,
       onLoadSample,
-      onMakePdf,
+      makePdfButton,
       onReset,
     } = this.props;
 
@@ -49,7 +49,7 @@ class Form extends Component {
         />
         <ButtonsWrapper>
           <Button onClick={onLoadSample}>Load Sample</Button>
-          <Button onClick={onMakePdf}>Make PDF</Button>
+          {makePdfButton}
           <Button resetBtn onClick={onReset}>
             Reset
           </Button>

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { v4 as uuid } from 'uuid';
-import { useReactToPrint } from 'react-to-print';
+import ReactToPrint from 'react-to-print';
 import Form from './Form/Form';
 import Preview from './Preview/Preview';
+import Button from './Auxiliary/Button';
 import emptyResume from './Auxiliary/emptyResume';
 import sampleResume from './Auxiliary/sampleResume';
 
@@ -145,10 +146,29 @@ class Main extends Component {
   }
 
   render() {
+    const makePdfButton = (
+      <ReactToPrint
+        trigger={() => <Button>Make PDF</Button>}
+        content={() => this.componentRef}
+      />
+    );
+
     return (
       <MainWrapper>
-        <Form />
-        <Preview />
+        <Form
+          resumeData={this.state}
+          onChangePersonal={this.handleChangePersonal}
+          onChangeExperience={this.handleChangeExperience}
+          onAddExperience={this.handleAddExperience}
+          onDeleteExperience={this.handleDeleteExperience}
+          onChangeEducation={this.handleChangeEducation}
+          onAddEducation={this.handleAddEducation}
+          onDeleteEducation={this.handleDeleteEducation}
+          onLoadSample={this.handleLoadSample}
+          onMakePdf={makePdfButton}
+          onReset={this.handleReset}
+        />
+        <Preview resumeData={this.state} ref={this.componentRef} />
       </MainWrapper>
     );
   }
