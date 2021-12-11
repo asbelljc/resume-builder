@@ -54,6 +54,25 @@ class Main extends Component {
     });
   }
 
+  handleAddExperience() {
+    this.setState((prevState) => {
+      return {
+        ...prevState,
+        experience: [
+          ...prevState.experience,
+          {
+            id: uuid(),
+            title: '',
+            company: '',
+            location: '',
+            startDate: '',
+            endDate: '',
+          },
+        ],
+      };
+    });
+  }
+
   render() {
     return (
       <MainWrapper>
