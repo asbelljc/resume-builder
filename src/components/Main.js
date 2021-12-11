@@ -20,6 +20,38 @@ const MainWrapper = styled.main`
 class Main extends Component {
   constructor(props) {
     super(props);
+
+    this.state = emptyResume;
+  }
+
+  handleChangePersonal(e) {
+    const { name, value } = e.target;
+
+    this.setState((prevState) => {
+      return {
+        ...prevState,
+        personal: {
+          ...prevState.personal,
+          [name]: value,
+        },
+      };
+    });
+  }
+
+  handleChangeExperience(e, id) {
+    const { name, value } = e.target;
+
+    this.setState((prevState) => {
+      const updatedExperience = prevState.experience.map((experienceItem) => {
+        if (experienceItem.id === id) {
+          return { ...experienceItem, [name]: value };
+        } else {
+          return experienceItem;
+        }
+      });
+
+      return { ...prevState, experience: [...updatedExperience] };
+    });
   }
 
   render() {
