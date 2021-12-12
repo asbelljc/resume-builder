@@ -3,7 +3,12 @@ import styled from 'styled-components';
 import TextInput from '../Auxiliary/TextInput';
 import Button from '../Auxiliary/Button';
 
-const ExperienceItemWrapper = styled.div``;
+const ExperienceItemWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.0625in;
+  position: relative;
+`;
 
 class ExperienceItem extends Component {
   constructor(props) {

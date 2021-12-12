@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
 
-const ButtonWrapper = styled.button``;
+const ButtonWrapper = styled.button`
+  ${(props) =>
+    props.deleteBtn &&
+    css`
+      position: absolute;
+      top: 0;
+      right: 0;
+    `}
+`;
 
 class Button extends Component {
   constructor(props) {

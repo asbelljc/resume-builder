@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  width: 100%;
 `;
 
 const NameAndTitleWrapper = styled.div`
@@ -36,9 +37,9 @@ class Header extends Component {
       <HeaderWrapper>
         <NameAndTitleWrapper>
           <h1>
-            {firstName}
+            {firstName.toUpperCase()}
             <br />
-            {lastName}
+            {lastName.toUpperCase()}
           </h1>
           <span>{title}</span>
         </NameAndTitleWrapper>

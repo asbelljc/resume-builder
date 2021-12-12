@@ -5,7 +5,17 @@ import Experience from './Experience';
 import Education from './Education';
 import Button from '../Auxiliary/Button';
 
-const FormWrapper = styled.div``;
+const FormWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.25in;
+  width: 8.5in;
+
+  h2 {
+    font-family: 'Caveat', cursive;
+    color: ${({ theme }) => theme.colors.primary};
+  }
+`;
 
 const ButtonsWrapper = styled.div``;
 

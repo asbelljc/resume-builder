@@ -27,7 +27,7 @@ class Experience extends Component {
       <Section title="Experience">
         {experienceItems}
         <Button addBtn onClick={onAdd}>
-          Add
+          +
         </Button>
       </Section>
     );

@@ -4,7 +4,11 @@ import Section from '../Auxiliary/Section';
 import ExperienceItem from './ExperienceItem';
 import EducationItem from './EducationItem';
 
-const MainWrapper = styled.div``;
+const MainWrapper = styled.div`
+  h2 {
+    font-weight: 600;
+  }
+`;
 
 const Summary = styled.div``;
 
@@ -26,11 +30,11 @@ class Main extends Component {
 
     return (
       <MainWrapper>
-        <Section title="Summary">
+        <Section title={'Summary'.toUpperCase()}>
           <Summary>{personalData.summary}</Summary>
         </Section>
-        <Section title="Experience">{experienceItems}</Section>
-        <Section title="Education">{educationItems}</Section>
+        <Section title={'Experience'.toUpperCase()}>{experienceItems}</Section>
+        <Section title={'Education'.toUpperCase()}>{educationItems}</Section>
       </MainWrapper>
     );
   }

@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-const SectionWrapper = styled.section``;
+const SectionWrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: 0.0625in;
+`;
 
 const Title = styled.h2``;
 

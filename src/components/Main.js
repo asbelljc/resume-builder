@@ -12,9 +12,11 @@ const MainWrapper = styled.main`
   width: 8.5in;
   display: flex;
   gap: 0.25in;
+  margin: 0 auto;
 
   @media (max-width: 17.25in) {
     flex-direction: column;
+    align-items: center;
   }
 `;
 

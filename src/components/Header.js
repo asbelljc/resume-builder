@@ -5,7 +5,7 @@ const HeaderWrapper = styled.header`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  background: #69c;
+  background: ${({ theme }) => theme.colors.primary};
   height: 100px;
   width: 100%;
 `;
@@ -13,9 +13,9 @@ const HeaderWrapper = styled.header`
 const Title = styled.h1`
   margin: 0;
   width: 8.5in;
-  font-family: 'DM Serif Display', serif;
-  font-size: 48px;
-  font-weight: 400;
+  font-family: 'Caveat', cursive;
+  font-size: 60px;
+  font-weight: 700;
   text-align: center;
   color: white;
 `;

@@ -3,7 +3,12 @@ import styled from 'styled-components';
 import TextInput from '../Auxiliary/TextInput';
 import Button from '../Auxiliary/Button';
 
-const EducationItemWrapper = styled.div``;
+const EducationItemWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.0625in;
+  position: relative;
+`;
 
 class EducationItem extends Component {
   constructor(props) {

@@ -9,6 +9,14 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     word-wrap: break-word;
   }
+
+  html {
+    font-family: 'Jost', serif;
+  }
+
+  h1, h2 {
+    line-height: 1;
+  }
 `;
 
 export default GlobalStyle;
