@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import ItemCard from '../Auxiliary/ItemCard';
 import TextInput from '../Auxiliary/TextInput';
 import Button from '../Auxiliary/Button';
-
-const EducationItemWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.0625in;
-  position: relative;
-`;
 
 class EducationItem extends Component {
   constructor(props) {
@@ -19,7 +13,7 @@ class EducationItem extends Component {
     const { id, itemData, onChange, onDelete } = this.props;
 
     return (
-      <EducationItemWrapper>
+      <ItemCard>
         <Button deleteBtn onClick={() => onDelete(id)}>
           ×
         </Button>
@@ -59,7 +53,7 @@ class EducationItem extends Component {
           name="endDate"
           value={itemData.endDate}
         />
-      </EducationItemWrapper>
+      </ItemCard>
     );
   }
 }

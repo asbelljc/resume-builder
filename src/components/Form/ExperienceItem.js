@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import ItemCard from '../Auxiliary/ItemCard';
 import TextInput from '../Auxiliary/TextInput';
 import Button from '../Auxiliary/Button';
-
-const ExperienceItemWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.0625in;
-  position: relative;
-`;
 
 class ExperienceItem extends Component {
   constructor(props) {
@@ -19,7 +13,7 @@ class ExperienceItem extends Component {
     const { id, itemData, onChange, onDelete } = this.props;
 
     return (
-      <ExperienceItemWrapper>
+      <ItemCard>
         <Button deleteBtn onClick={() => onDelete(id)}>
           ×
         </Button>
@@ -53,7 +47,7 @@ class ExperienceItem extends Component {
           name="endDate"
           value={itemData.endDate}
         />
-      </ExperienceItemWrapper>
+      </ItemCard>
     );
   }
 }

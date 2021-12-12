@@ -5,9 +5,13 @@ const SectionWrapper = styled.section`
   display: flex;
   flex-direction: column;
   gap: 0.0625in;
-`;
 
-const Title = styled.h2``;
+  h2 {
+    font-size: 32px;
+    padding-left: 0.25in;
+    padding-bottom: 0.0625in;
+  }
+`;
 
 class Section extends Component {
   constructor(props) {
@@ -19,7 +23,7 @@ class Section extends Component {
 
     return (
       <SectionWrapper>
-        <Title>{title}</Title>
+        <h2>{title}</h2>
         {children}
       </SectionWrapper>
     );

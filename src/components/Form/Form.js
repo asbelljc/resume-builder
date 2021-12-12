@@ -17,7 +17,16 @@ const FormWrapper = styled.div`
   }
 `;
 
-const ButtonsWrapper = styled.div``;
+const ButtonsWrapper = styled.div`
+  align-self: stretch;
+  display: flex;
+  justify-content: stretch;
+  margin-top: 20px;
+
+  > * {
+    flex-basis: calc(100% / 3);
+  }
+`;
 
 class Form extends Component {
   constructor(props) {

@@ -9,10 +9,13 @@ import emptyResume from './Auxiliary/emptyResume';
 import sampleResume from './Auxiliary/sampleResume';
 
 const MainWrapper = styled.main`
-  width: 8.5in;
   display: flex;
   gap: 0.25in;
+  justify-content: space-between;
+  max-width: 17.5in;
   margin: 0 auto;
+  padding: 0.25in 0.5in;
+  overflow: hidden;
 
   @media (max-width: 17.25in) {
     flex-direction: column;
