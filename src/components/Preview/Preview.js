@@ -5,7 +5,17 @@ import Main from './Main';
 
 const PreviewWrapper = styled.div`
   width: 8.5in;
+  min-width: 8.5in;
+  max-width: 8.5in;
   height: 11in;
+  padding: 0.5in;
+  position: sticky;
+  top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.3in;
+  box-shadow: ${({ theme }) => theme.boxShadow};
 `;
 
 class Preview extends Component {

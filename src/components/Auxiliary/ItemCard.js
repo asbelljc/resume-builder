@@ -10,7 +10,7 @@ const ItemCardWrapper = styled.div`
   margin-bottom: 0.125in;
   border-radius: 20px;
   background-color: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: ${({ theme }) => theme.boxShadow};
 `;
 
 class ItemCard extends Component {

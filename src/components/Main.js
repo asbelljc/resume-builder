@@ -5,17 +5,17 @@ import ReactToPrint from 'react-to-print';
 import Form from './Form/Form';
 import Preview from './Preview/Preview';
 import Button from './Auxiliary/Button';
-import emptyResume from './Auxiliary/emptyResume';
-import sampleResume from './Auxiliary/sampleResume';
+import emptyResume from '../data/emptyResume';
+import sampleResume from '../data/sampleResume';
 
 const MainWrapper = styled.main`
   display: flex;
-  gap: 0.25in;
   justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.25in;
   max-width: 17.5in;
   margin: 0 auto;
-  padding: 0.25in 0.5in;
-  overflow: hidden;
+  padding: 0.25in 0 0.5in 0;
 
   @media (max-width: 17.25in) {
     flex-direction: column;

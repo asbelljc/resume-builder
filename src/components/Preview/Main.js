@@ -5,8 +5,14 @@ import ExperienceItem from './ExperienceItem';
 import EducationItem from './EducationItem';
 
 const MainWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.25in;
+
   h2 {
-    font-weight: 600;
+    font-weight: 900;
+    padding-left: 0;
   }
 `;
 

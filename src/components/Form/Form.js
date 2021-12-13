@@ -10,6 +10,8 @@ const FormWrapper = styled.div`
   flex-direction: column;
   gap: 0.25in;
   width: 8.5in;
+  min-width: 8.5in;
+  max-width: 8.5in;
 
   h2 {
     font-family: 'Caveat', cursive;

@@ -13,13 +13,21 @@ const ButtonWrapper = styled.button`
   font-family: 'Caveat', cursive;
   font-size: 18px;
   font-weight: 700;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: ${({ theme }) => theme.boxShadow};
   cursor: pointer;
 
-  &:hover {
-    color: white;
-    background-color: ${({ theme }) => theme.colors.primary};
-  }
+  ${(props) =>
+    !(props.deleteBtn || props.resetBtn) &&
+    css`
+      &:hover {
+        color: white;
+        background-color: ${({ theme }) => theme.colors.primary};
+      }
+
+      &:active {
+        background-color: ${({ theme }) => theme.colors.primaryActive};
+      }
+    `};
 
   ${(props) =>
     props.deleteBtn &&
@@ -36,11 +44,6 @@ const ButtonWrapper = styled.button`
       top: 0;
       right: 0;
       box-shadow: none;
-
-      &:hover {
-        color: ${({ theme }) => theme.colors.primary};
-        background-color: transparent;
-      }
     `};
 
   ${(props) =>
@@ -61,7 +64,12 @@ const ButtonWrapper = styled.button`
     props.resetBtn &&
     css`
       &:hover {
-        background: ${({ theme }) => theme.colors.reset};
+        color: white;
+        background-color: ${({ theme }) => theme.colors.reset};
+      }
+
+      &:active {
+        background-color: ${({ theme }) => theme.colors.resetActive};
       }
     `}
 `;

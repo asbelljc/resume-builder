@@ -10,7 +10,7 @@ const sampleResume = {
     phone: '012-345-6789',
     email: 'steve.careers@apple.com',
     summary:
-      'Maecenas libero augue, consequat eget felis a, bibendum condimentum elit. Donec mi lorem, porttitor nec sem vel, sagittis vestibulum ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus mattis libero eu metus mattis, nec dapibus felis pellentesque. In hac habitasse platea dictumst. Cras diam.',
+      'Donec molestie nibh magna. Aliquam erat volutpat. Donec vel orci neque. Curabitur dignissim bibendum libero, vitae aliquam ipsum gravida sed. Sed vel lectus in orci tincidunt consectetur. Mauris vitae condimentum neque. Nulla vulputate sem ac enim iaculis rhoncus. Aenean bibendum volutpat pulvinar. Maecenas posuere pretium diam, ut pellentesque velit ullamcorper vitae. Cras vel risus quis.',
   },
   experience: [
     {

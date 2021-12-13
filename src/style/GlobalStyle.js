@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     font-family: 'Jost', serif;
+    position: relative;
   }
 
   h1, h2 {

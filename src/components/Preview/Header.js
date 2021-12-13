@@ -4,17 +4,28 @@ import styled from 'styled-components';
 const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 100%;
 `;
 
 const NameAndTitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
+
+  h1 {
+    font-size: 42px;
+  }
+
+  span {
+    font-size: 24px;
+  }
 `;
 
 const ContactWrapper = styled.div`
   display: flex;
   flex-direction: column;
+
+  span {
+    font-size: 14px;
+  }
 `;
 
 class Header extends Component {

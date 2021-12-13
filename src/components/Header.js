@@ -14,7 +14,7 @@ const Title = styled.h1`
   margin: 0;
   width: 8.5in;
   font-family: 'Caveat', cursive;
-  font-size: 72px;
+  font-size: 84px;
   font-weight: 700;
   text-align: center;
   color: white;
