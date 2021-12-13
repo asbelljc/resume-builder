@@ -15,6 +15,7 @@ const PreviewWrapper = styled.div`
   flex-direction: column;
   align-items: stretch;
   gap: 0.3in;
+  background-color: white;
   box-shadow: ${({ theme }) => theme.boxShadow};
 `;
 

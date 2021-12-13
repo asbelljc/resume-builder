@@ -24,7 +24,7 @@ const ContactWrapper = styled.div`
   flex-direction: column;
 
   span {
-    font-size: 14px;
+    font-size: 12px;
   }
 `;
 
