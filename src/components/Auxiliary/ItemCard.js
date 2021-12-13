@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { CSSTransition } from 'react-transition-group';
 
 const ItemCardWrapper = styled.div`
   position: relative;
@@ -11,12 +12,21 @@ const ItemCardWrapper = styled.div`
   border-radius: 20px;
   background-color: white;
   box-shadow: ${({ theme }) => theme.boxShadow};
-  transform: scaleY(0);
   transform-origin: top;
-  transition: transform 0.25s;
 
-  &.shown {
-    transform: scaleY(1);
+  &.expand-enter {
+    transform: scale(0);
+  }
+  &.expand-enter-active {
+    transform: scale(1);
+    transition: transform 200ms;
+  }
+  &.expand-exit {
+    transform: scale(1);
+  }
+  &.expand-exit-active {
+    transform: scale(0);
+    transition: transform 200ms;
   }
 `;
 
@@ -24,14 +34,14 @@ class ItemCard extends Component {
   constructor(props) {
     super(props);
 
-    this.state = '';
+    this.state = {
+      mounted: false,
+    };
   }
 
   componentDidMount() {
-    requestAnimationFrame(() => {
-      this.setState({
-        class: 'shown',
-      });
+    this.setState({
+      mounted: true,
     });
   }
 
@@ -39,7 +49,14 @@ class ItemCard extends Component {
     const { children } = this.props;
 
     return (
-      <ItemCardWrapper className={this.state.class}>{children}</ItemCardWrapper>
+      <CSSTransition
+        in={this.state.mounted}
+        timeout={200}
+        unmountOnExit
+        classNames="expand"
+      >
+        <ItemCardWrapper>{children}</ItemCardWrapper>
+      </CSSTransition>
     );
   }
 }
