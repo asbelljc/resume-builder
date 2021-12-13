@@ -15,6 +15,7 @@ const ButtonWrapper = styled.button`
   font-weight: 700;
   box-shadow: ${({ theme }) => theme.boxShadow};
   cursor: pointer;
+  transition: background-color 200ms, color 200ms;
 
   ${(props) =>
     !(props.deleteBtn || props.resetBtn) &&
