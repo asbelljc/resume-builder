@@ -11,13 +11,36 @@ const ItemCardWrapper = styled.div`
   border-radius: 20px;
   background-color: white;
   box-shadow: ${({ theme }) => theme.boxShadow};
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.25s;
+
+  &.shown {
+    transform: scaleY(1);
+  }
 `;
 
 class ItemCard extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = '';
+  }
+
+  componentDidMount() {
+    requestAnimationFrame(() => {
+      this.setState({
+        class: 'shown',
+      });
+    });
+  }
+
   render() {
     const { children } = this.props;
 
-    return <ItemCardWrapper>{children}</ItemCardWrapper>;
+    return (
+      <ItemCardWrapper className={this.state.class}>{children}</ItemCardWrapper>
+    );
   }
 }
 
