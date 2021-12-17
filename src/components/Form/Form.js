@@ -41,7 +41,7 @@ function Form(props) {
     onAddEducation,
     onDeleteEducation,
     onLoadSample,
-    makePdfButton,
+    onMakePdf,
     onReset,
   } = props;
 
@@ -65,7 +65,7 @@ function Form(props) {
       />
       <ButtonsWrapper>
         <Button onClick={onLoadSample}>Load Sample</Button>
-        {makePdfButton}
+        <Button onClick={onMakePdf}>Make PDF</Button>
         <Button resetBtn onClick={onReset}>
           Reset
         </Button>

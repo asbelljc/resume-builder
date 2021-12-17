@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { v4 as uuid } from 'uuid';
-import ReactToPrint from 'react-to-print';
+import { useReactToPrint } from 'react-to-print';
 import Form from './Form/Form';
 import Preview from './Preview/Preview';
-import Button from './Auxiliary/Button';
 import emptyResume from '../data/emptyResume';
 import sampleResume from '../data/sampleResume';
 
@@ -23,28 +22,15 @@ const MainWrapper = styled.main`
   }
 `;
 
-class Main extends Component {
-  constructor(props) {
-    super(props);
+function Main() {
+  const [resumeData, setResumeData] = useState(emptyResume);
 
-    this.state = emptyResume;
-    this.componentRef = React.createRef();
+  const componentRef = useRef();
 
-    this.handleChangePersonal = this.handleChangePersonal.bind(this);
-    this.handleChangeExperience = this.handleChangeExperience.bind(this);
-    this.handleAddExperience = this.handleAddExperience.bind(this);
-    this.handleDeleteExperience = this.handleDeleteExperience.bind(this);
-    this.handleChangeEducation = this.handleChangeEducation.bind(this);
-    this.handleAddEducation = this.handleAddEducation.bind(this);
-    this.handleDeleteEducation = this.handleDeleteEducation.bind(this);
-    this.handleLoadSample = this.handleLoadSample.bind(this);
-    this.handleReset = this.handleReset.bind(this);
-  }
-
-  handleChangePersonal(e) {
+  const handleChangePersonal = (e) => {
     const { name, value } = e.target;
 
-    this.setState((prevState) => {
+    setResumeData((prevState) => {
       return {
         ...prevState,
         personal: {
@@ -53,12 +39,12 @@ class Main extends Component {
         },
       };
     });
-  }
+  };
 
-  handleChangeExperience(e, id) {
+  const handleChangeExperience = (e, id) => {
     const { name, value } = e.target;
 
-    this.setState((prevState) => {
+    setResumeData((prevState) => {
       const updatedExperience = prevState.experience.map((experienceItem) => {
         if (experienceItem.id === id) {
           return { ...experienceItem, [name]: value };
@@ -69,10 +55,10 @@ class Main extends Component {
 
       return { ...prevState, experience: [...updatedExperience] };
     });
-  }
+  };
 
-  handleAddExperience() {
-    this.setState((prevState) => {
+  const handleAddExperience = () => {
+    setResumeData((prevState) => {
       return {
         ...prevState,
         experience: [
@@ -88,21 +74,21 @@ class Main extends Component {
         ],
       };
     });
-  }
+  };
 
-  handleDeleteExperience(id) {
-    this.setState((prevState) => {
+  const handleDeleteExperience = (id) => {
+    setResumeData((prevState) => {
       const updatedExperience = prevState.experience.filter(
         (experienceItem) => experienceItem.id !== id
       );
       return { ...prevState, experience: [...updatedExperience] };
     });
-  }
+  };
 
-  handleChangeEducation(e, id) {
+  const handleChangeEducation = (e, id) => {
     const { name, value } = e.target;
 
-    this.setState((prevState) => {
+    setResumeData((prevState) => {
       const updatedEducation = prevState.education.map((educationItem) => {
         if (educationItem.id === id) {
           return { ...educationItem, [name]: value };
@@ -113,10 +99,10 @@ class Main extends Component {
 
       return { ...prevState, education: [...updatedEducation] };
     });
-  }
+  };
 
-  handleAddEducation() {
-    this.setState((prevState) => {
+  const handleAddEducation = () => {
+    setResumeData((prevState) => {
       return {
         ...prevState,
         education: [
@@ -133,55 +119,45 @@ class Main extends Component {
         ],
       };
     });
-  }
+  };
 
-  handleDeleteEducation(id) {
-    this.setState((prevState) => {
+  const handleDeleteEducation = (id) => {
+    setResumeData((prevState) => {
       const updatedEducation = prevState.education.filter(
         (educationItem) => educationItem.id !== id
       );
       return { ...prevState, education: [...updatedEducation] };
     });
-  }
+  };
 
-  handleLoadSample() {
-    this.setState(sampleResume);
-  }
+  const handleLoadSample = () => {
+    setResumeData(sampleResume);
+  };
 
-  handleReset() {
-    this.setState(emptyResume);
-  }
+  const handleReset = () => {
+    setResumeData(emptyResume);
+  };
 
-  render() {
-    const makePdfButton = (
-      <ReactToPrint
-        trigger={() => <Button>Make PDF</Button>}
-        content={() => this.componentRef}
+  const makePdf = useReactToPrint({ content: () => componentRef.current });
+
+  return (
+    <MainWrapper>
+      <Form
+        resumeData={resumeData}
+        onChangePersonal={handleChangePersonal}
+        onChangeExperience={handleChangeExperience}
+        onAddExperience={handleAddExperience}
+        onDeleteExperience={handleDeleteExperience}
+        onChangeEducation={handleChangeEducation}
+        onAddEducation={handleAddEducation}
+        onDeleteEducation={handleDeleteEducation}
+        onLoadSample={handleLoadSample}
+        onMakePdf={makePdf}
+        onReset={handleReset}
       />
-    );
-
-    return (
-      <MainWrapper>
-        <Form
-          resumeData={this.state}
-          onChangePersonal={this.handleChangePersonal}
-          onChangeExperience={this.handleChangeExperience}
-          onAddExperience={this.handleAddExperience}
-          onDeleteExperience={this.handleDeleteExperience}
-          onChangeEducation={this.handleChangeEducation}
-          onAddEducation={this.handleAddEducation}
-          onDeleteEducation={this.handleDeleteEducation}
-          onLoadSample={this.handleLoadSample}
-          makePdfButton={makePdfButton}
-          onReset={this.handleReset}
-        />
-        <Preview
-          resumeData={this.state}
-          ref={(element) => (this.componentRef = element)}
-        />
-      </MainWrapper>
-    );
-  }
+      <Preview resumeData={resumeData} ref={componentRef} />
+    </MainWrapper>
+  );
 }
 
 export default Main;

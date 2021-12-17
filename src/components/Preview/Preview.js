@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import Header from './Header';
 import Main from './Main';
@@ -19,9 +19,10 @@ const PreviewWrapper = styled.div`
   box-shadow: ${({ theme }) => theme.boxShadow};
 `;
 
-function Preview({ resumeData }) {
+// react-to-print requires forwardRef for use on functional components
+const Preview = forwardRef(({ resumeData }, ref) => {
   return (
-    <PreviewWrapper>
+    <PreviewWrapper ref={ref}>
       <Header personalData={resumeData.personal} />
       <Main
         personalData={resumeData.personal}
@@ -30,6 +31,6 @@ function Preview({ resumeData }) {
       />
     </PreviewWrapper>
   );
-}
+});
 
 export default Preview;
