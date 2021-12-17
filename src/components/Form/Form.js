@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Personal from './Personal';
 import Experience from './Experience';
@@ -30,54 +30,48 @@ const ButtonsWrapper = styled.div`
   }
 `;
 
-class Form extends Component {
-  constructor(props) {
-    super(props);
-  }
+function Form(props) {
+  const {
+    resumeData,
+    onChangePersonal,
+    onChangeExperience,
+    onAddExperience,
+    onDeleteExperience,
+    onChangeEducation,
+    onAddEducation,
+    onDeleteEducation,
+    onLoadSample,
+    makePdfButton,
+    onReset,
+  } = props;
 
-  render() {
-    const {
-      resumeData,
-      onChangePersonal,
-      onChangeExperience,
-      onAddExperience,
-      onDeleteExperience,
-      onChangeEducation,
-      onAddEducation,
-      onDeleteEducation,
-      onLoadSample,
-      makePdfButton,
-      onReset,
-    } = this.props;
-
-    return (
-      <FormWrapper>
-        <Personal
-          personalData={resumeData.personal}
-          onChange={onChangePersonal}
-        />
-        <Experience
-          experienceData={resumeData.experience}
-          onChange={onChangeExperience}
-          onAdd={onAddExperience}
-          onDelete={onDeleteExperience}
-        />
-        <Education
-          educationData={resumeData.education}
-          onChange={onChangeEducation}
-          onAdd={onAddEducation}
-          onDelete={onDeleteEducation}
-        />
-        <ButtonsWrapper>
-          <Button onClick={onLoadSample}>Load Sample</Button>
-          {makePdfButton}
-          <Button resetBtn onClick={onReset}>
-            Reset
-          </Button>
-        </ButtonsWrapper>
-      </FormWrapper>
-    );
-  }
+  return (
+    <FormWrapper>
+      <Personal
+        personalData={resumeData.personal}
+        onChange={onChangePersonal}
+      />
+      <Experience
+        experienceData={resumeData.experience}
+        onChange={onChangeExperience}
+        onAdd={onAddExperience}
+        onDelete={onDeleteExperience}
+      />
+      <Education
+        educationData={resumeData.education}
+        onChange={onChangeEducation}
+        onAdd={onAddEducation}
+        onDelete={onDeleteEducation}
+      />
+      <ButtonsWrapper>
+        <Button onClick={onLoadSample}>Load Sample</Button>
+        {makePdfButton}
+        <Button resetBtn onClick={onReset}>
+          Reset
+        </Button>
+      </ButtonsWrapper>
+    </FormWrapper>
+  );
 }
 
 export default Form;
