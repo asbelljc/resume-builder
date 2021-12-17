@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const HeaderWrapper = styled.header`
@@ -20,14 +20,12 @@ const Title = styled.h1`
   color: white;
 `;
 
-class Header extends Component {
-  render() {
-    return (
-      <HeaderWrapper>
-        <Title>Resume Builder</Title>
-      </HeaderWrapper>
-    );
-  }
+function Header() {
+  return (
+    <HeaderWrapper>
+      <Title>Resume Builder</Title>
+    </HeaderWrapper>
+  );
 }
 
 export default Header;
