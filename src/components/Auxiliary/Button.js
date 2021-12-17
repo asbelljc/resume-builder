@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled, { css } from 'styled-components';
 
 const ButtonWrapper = styled.button`
@@ -75,25 +75,17 @@ const ButtonWrapper = styled.button`
     `}
 `;
 
-class Button extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    const { addBtn, deleteBtn, resetBtn, onClick, children } = this.props;
-
-    return (
-      <ButtonWrapper
-        addBtn={addBtn} // If these props are specified, they overwrite the default button style.
-        deleteBtn={deleteBtn} //
-        resetBtn={resetBtn} //
-        onClick={onClick}
-      >
-        {children}
-      </ButtonWrapper>
-    );
-  }
+function Button({ addBtn, deleteBtn, resetBtn, onClick, children }) {
+  return (
+    <ButtonWrapper
+      addBtn={addBtn} // If these props are specified, they overwrite the default button style.
+      deleteBtn={deleteBtn} //
+      resetBtn={resetBtn} //
+      onClick={onClick}
+    >
+      {children}
+    </ButtonWrapper>
+  );
 }
 
 export default Button;

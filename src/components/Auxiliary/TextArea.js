@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const TextAreaWrapper = styled.textarea`
@@ -16,24 +16,16 @@ const TextAreaWrapper = styled.textarea`
   }
 `;
 
-class TextArea extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    const { onChange, placeholder, name, value } = this.props;
-
-    return (
-      <TextAreaWrapper
-        onChange={onChange}
-        placeholder={placeholder}
-        name={name}
-        value={value}
-        rows="5"
-      />
-    );
-  }
+function TextArea({ onChange, placeholder, name, value }) {
+  return (
+    <TextAreaWrapper
+      onChange={onChange}
+      placeholder={placeholder}
+      name={name}
+      value={value}
+      rows="5"
+    />
+  );
 }
 
 export default TextArea;

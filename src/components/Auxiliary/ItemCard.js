@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { CSSTransition } from 'react-transition-group';
 
@@ -19,46 +19,34 @@ const ItemCardWrapper = styled.div`
   }
   &.expand-enter-active {
     transform: scale(1);
-    transition: transform 200ms;
+    transition: transform 250ms;
   }
   &.expand-exit {
     transform: scale(1);
   }
   &.expand-exit-active {
     transform: scale(0);
-    transition: transform 200ms;
+    transition: transform 250ms;
   }
 `;
 
-class ItemCard extends Component {
-  constructor(props) {
-    super(props);
+function ItemCard({ children }) {
+  const [isMounted, mount] = useState(false);
 
-    this.state = {
-      mounted: false,
-    };
-  }
+  useEffect(() => {
+    mount(true);
+  });
 
-  componentDidMount() {
-    this.setState({
-      mounted: true,
-    });
-  }
-
-  render() {
-    const { children } = this.props;
-
-    return (
-      <CSSTransition
-        in={this.state.mounted}
-        timeout={200}
-        unmountOnExit
-        classNames="expand"
-      >
-        <ItemCardWrapper>{children}</ItemCardWrapper>
-      </CSSTransition>
-    );
-  }
+  return (
+    <CSSTransition
+      in={isMounted}
+      timeout={250}
+      unmountOnExit
+      classNames="expand"
+    >
+      <ItemCardWrapper>{children}</ItemCardWrapper>
+    </CSSTransition>
+  );
 }
 
 export default ItemCard;

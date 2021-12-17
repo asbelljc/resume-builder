@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const SectionWrapper = styled.section`
@@ -13,21 +13,13 @@ const SectionWrapper = styled.section`
   }
 `;
 
-class Section extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    const { title, children } = this.props;
-
-    return (
-      <SectionWrapper>
-        <h2>{title}</h2>
-        {children}
-      </SectionWrapper>
-    );
-  }
+function Section({ title, children }) {
+  return (
+    <SectionWrapper>
+      <h2>{title}</h2>
+      {children}
+    </SectionWrapper>
+  );
 }
 
 export default Section;
