@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const EducationItemWrapper = styled.div`
@@ -26,29 +26,21 @@ const SchoolAndDateWrapper = styled.div`
   }
 `;
 
-class EducationItem extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    const { itemData } = this.props;
-
-    return (
-      <EducationItemWrapper>
-        <SchoolAndDateWrapper>
-          <span>{itemData.school}</span>
-          <span>
-            {itemData.startDate} - {itemData.endDate}
-          </span>
-        </SchoolAndDateWrapper>
+function EducationItem({ itemData }) {
+  return (
+    <EducationItemWrapper>
+      <SchoolAndDateWrapper>
+        <span>{itemData.school}</span>
         <span>
-          {itemData.degree}, {itemData.concentration}
+          {itemData.startDate} - {itemData.endDate}
         </span>
-        <span>{itemData.location}</span>
-      </EducationItemWrapper>
-    );
-  }
+      </SchoolAndDateWrapper>
+      <span>
+        {itemData.degree}, {itemData.concentration}
+      </span>
+      <span>{itemData.location}</span>
+    </EducationItemWrapper>
+  );
 }
 
 export default EducationItem;

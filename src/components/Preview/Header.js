@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const HeaderWrapper = styled.div`
@@ -28,41 +28,35 @@ const ContactWrapper = styled.div`
   }
 `;
 
-class Header extends Component {
-  constructor(props) {
-    super(props);
-  }
+function Header({ personalData }) {
+  const {
+    firstName,
+    lastName,
+    title,
+    streetAddress,
+    cityStateZip,
+    email,
+    phone,
+  } = personalData;
 
-  render() {
-    const {
-      firstName,
-      lastName,
-      title,
-      streetAddress,
-      cityStateZip,
-      email,
-      phone,
-    } = this.props.personalData;
-
-    return (
-      <HeaderWrapper>
-        <NameAndTitleWrapper>
-          <h1>
-            {firstName.toUpperCase()}
-            <br />
-            {lastName.toUpperCase()}
-          </h1>
-          <span>{title}</span>
-        </NameAndTitleWrapper>
-        <ContactWrapper>
-          <span>{streetAddress}</span>
-          <span>{cityStateZip}</span>
-          <span>{email}</span>
-          <span>{phone}</span>
-        </ContactWrapper>
-      </HeaderWrapper>
-    );
-  }
+  return (
+    <HeaderWrapper>
+      <NameAndTitleWrapper>
+        <h1>
+          {firstName.toUpperCase()}
+          <br />
+          {lastName.toUpperCase()}
+        </h1>
+        <span>{title}</span>
+      </NameAndTitleWrapper>
+      <ContactWrapper>
+        <span>{streetAddress}</span>
+        <span>{cityStateZip}</span>
+        <span>{email}</span>
+        <span>{phone}</span>
+      </ContactWrapper>
+    </HeaderWrapper>
+  );
 }
 
 export default Header;

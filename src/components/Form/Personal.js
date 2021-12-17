@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Section from '../Auxiliary/Section';
 import ItemCard from '../Auxiliary/ItemCard';
 import TextInput from '../Auxiliary/TextInput';

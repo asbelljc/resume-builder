@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Section from '../Auxiliary/Section';
 import ExperienceItem from './ExperienceItem';
@@ -18,32 +18,24 @@ const MainWrapper = styled.div`
 
 const Summary = styled.div``;
 
-class Main extends Component {
-  constructor(props) {
-    super(props);
-  }
+function Main({ personalData, experienceData, educationData }) {
+  const experienceItems = experienceData.map((itemData) => {
+    return <ExperienceItem key={itemData.id} itemData={itemData} />;
+  });
 
-  render() {
-    const { personalData, experienceData, educationData } = this.props;
+  const educationItems = educationData.map((itemData) => {
+    return <EducationItem key={itemData.id} itemData={itemData} />;
+  });
 
-    const experienceItems = experienceData.map((itemData) => {
-      return <ExperienceItem key={itemData.id} itemData={itemData} />;
-    });
-
-    const educationItems = educationData.map((itemData) => {
-      return <EducationItem key={itemData.id} itemData={itemData} />;
-    });
-
-    return (
-      <MainWrapper>
-        <Section title={'Summary'.toUpperCase()}>
-          <Summary>{personalData.summary}</Summary>
-        </Section>
-        <Section title={'Experience'.toUpperCase()}>{experienceItems}</Section>
-        <Section title={'Education'.toUpperCase()}>{educationItems}</Section>
-      </MainWrapper>
-    );
-  }
+  return (
+    <MainWrapper>
+      <Section title={'Summary'.toUpperCase()}>
+        <Summary>{personalData.summary}</Summary>
+      </Section>
+      <Section title={'Experience'.toUpperCase()}>{experienceItems}</Section>
+      <Section title={'Education'.toUpperCase()}>{educationItems}</Section>
+    </MainWrapper>
+  );
 }
 
 export default Main;

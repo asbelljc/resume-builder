@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Header from './Header';
 import Main from './Main';
@@ -19,25 +19,17 @@ const PreviewWrapper = styled.div`
   box-shadow: ${({ theme }) => theme.boxShadow};
 `;
 
-class Preview extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    const { resumeData } = this.props;
-
-    return (
-      <PreviewWrapper>
-        <Header personalData={resumeData.personal} />
-        <Main
-          personalData={resumeData.personal}
-          experienceData={resumeData.experience}
-          educationData={resumeData.education}
-        />
-      </PreviewWrapper>
-    );
-  }
+function Preview({ resumeData }) {
+  return (
+    <PreviewWrapper>
+      <Header personalData={resumeData.personal} />
+      <Main
+        personalData={resumeData.personal}
+        experienceData={resumeData.experience}
+        educationData={resumeData.education}
+      />
+    </PreviewWrapper>
+  );
 }
 
 export default Preview;

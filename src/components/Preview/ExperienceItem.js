@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const ExperienceItemWrapper = styled.div`
@@ -26,27 +26,19 @@ const TitleAndDateWrapper = styled.div`
   }
 `;
 
-class ExperienceItem extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    const { itemData } = this.props;
-
-    return (
-      <ExperienceItemWrapper>
-        <TitleAndDateWrapper>
-          <span>{itemData.title}</span>
-          <span>
-            {itemData.startDate} - {itemData.endDate}
-          </span>
-        </TitleAndDateWrapper>
-        <span>{itemData.company}</span>
-        <span>{itemData.location}</span>
-      </ExperienceItemWrapper>
-    );
-  }
+function ExperienceItem({ itemData }) {
+  return (
+    <ExperienceItemWrapper>
+      <TitleAndDateWrapper>
+        <span>{itemData.title}</span>
+        <span>
+          {itemData.startDate} - {itemData.endDate}
+        </span>
+      </TitleAndDateWrapper>
+      <span>{itemData.company}</span>
+      <span>{itemData.location}</span>
+    </ExperienceItemWrapper>
+  );
 }
 
 export default ExperienceItem;
