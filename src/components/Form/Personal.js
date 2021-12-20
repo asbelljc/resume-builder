@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Section from '../Auxiliary/Section';
 import ItemCard from '../Auxiliary/ItemCard';
 import TextInput from '../Auxiliary/TextInput';
 import TextArea from '../Auxiliary/TextArea';
 
 function Personal({ personalData, onChange }) {
+  const [mountState, setMountState] = useState(false);
+
+  useEffect(() => {
+    setMountState(true);
+  }, []);
+
   return (
     <Section title="Personal">
-      <ItemCard>
+      <ItemCard isMounted={mountState}>
         <TextInput
           onChange={(e) => onChange(e)}
           placeholder="First name"

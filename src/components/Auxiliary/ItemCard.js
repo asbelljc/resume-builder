@@ -30,13 +30,7 @@ const ItemCardWrapper = styled.div`
   }
 `;
 
-function ItemCard({ children }) {
-  const [isMounted, mount] = useState(false);
-
-  useEffect(() => {
-    mount(true);
-  });
-
+function ItemCard({ children, isMounted }) {
   return (
     <CSSTransition
       in={isMounted}

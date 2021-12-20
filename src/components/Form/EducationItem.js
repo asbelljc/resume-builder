@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ItemCard from '../Auxiliary/ItemCard';
 import TextInput from '../Auxiliary/TextInput';
 import Button from '../Auxiliary/Button';
 
 function EducationItem({ id, itemData, onChange, onDelete }) {
+  const [mountState, setMountState] = useState(false);
+
+  useEffect(() => {
+    setMountState(true);
+  }, []);
+
+  const animateThenUnmount = () => {
+    setMountState(false);
+    setTimeout(() => {
+      onDelete(id);
+    }, 250);
+  };
+
   return (
-    <ItemCard>
-      <Button deleteBtn onClick={() => onDelete(id)}>
+    <ItemCard isMounted={mountState}>
+      <Button deleteBtn onClick={animateThenUnmount}>
         ×
       </Button>
       <TextInput
