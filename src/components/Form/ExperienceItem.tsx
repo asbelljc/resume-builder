@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ItemCard from '../Auxiliary/ItemCard';
 import TextInput from '../Auxiliary/TextInput';
 import Button from '../Auxiliary/Button';
-import { ExperienceItemData } from '../../data/interfaces';
+import { ExperienceItemData } from '../../types/data';
 
 interface Props {
   id: string;

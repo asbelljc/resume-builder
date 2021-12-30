@@ -2,7 +2,7 @@ import React from 'react';
 import ExperienceItem from './ExperienceItem';
 import Section from '../Auxiliary/Section';
 import Button from '../Auxiliary/Button';
-import { ExperienceData } from '../../data/interfaces';
+import { ExperienceData } from '../../types/data';
 
 interface Props {
   experienceData: ExperienceData;

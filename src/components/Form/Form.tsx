@@ -4,6 +4,26 @@ import Personal from './Personal';
 import Experience from './Experience';
 import Education from './Education';
 import Button from '../Auxiliary/Button';
+import { ResumeData } from '../../types/data';
+import {
+  ChangeHandler,
+  AddHandler,
+  DeleteHandler,
+} from '../../types/formHandlers';
+
+interface Props {
+  resumeData: ResumeData;
+  onChangePersonal: ChangeHandler;
+  onChangeExperience: ChangeHandler;
+  onAddExperience: AddHandler;
+  onDeleteExperience: DeleteHandler;
+  onChangeEducation: ChangeHandler;
+  onAddEducation: AddHandler;
+  onDeleteEducation: DeleteHandler;
+  onLoadSample: () => void;
+  onMakePdf: () => void;
+  onReset: () => void;
+}
 
 const FormWrapper = styled.div`
   display: flex;
@@ -30,21 +50,19 @@ const ButtonsWrapper = styled.div`
   }
 `;
 
-function Form(props) {
-  const {
-    resumeData,
-    onChangePersonal,
-    onChangeExperience,
-    onAddExperience,
-    onDeleteExperience,
-    onChangeEducation,
-    onAddEducation,
-    onDeleteEducation,
-    onLoadSample,
-    onMakePdf,
-    onReset,
-  } = props;
-
+function Form({
+  resumeData,
+  onChangePersonal,
+  onChangeExperience,
+  onAddExperience,
+  onDeleteExperience,
+  onChangeEducation,
+  onAddEducation,
+  onDeleteEducation,
+  onLoadSample,
+  onMakePdf,
+  onReset,
+}: Props) {
   return (
     <FormWrapper>
       <Personal

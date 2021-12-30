@@ -3,8 +3,15 @@ import Section from '../Auxiliary/Section';
 import ItemCard from '../Auxiliary/ItemCard';
 import TextInput from '../Auxiliary/TextInput';
 import TextArea from '../Auxiliary/TextArea';
+import { PersonalData } from '../../types/data';
+import { ChangeHandler } from '../../types/formHandlers';
 
-function Personal({ personalData, onChange }) {
+interface Props {
+  personalData: PersonalData;
+  onChange: ChangeHandler;
+}
+
+function Personal({ personalData, onChange }: Props) {
   const [mountState, setMountState] = useState(false);
 
   useEffect(() => {

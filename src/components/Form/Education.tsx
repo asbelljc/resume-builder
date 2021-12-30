@@ -2,7 +2,7 @@ import React from 'react';
 import EducationItem from './EducationItem';
 import Section from '../Auxiliary/Section';
 import Button from '../Auxiliary/Button';
-import { EducationData } from '../../data/interfaces';
+import { EducationData } from '../../types/data';
 
 interface Props {
   educationData: EducationData;
