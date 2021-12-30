@@ -3,6 +3,13 @@ import styled from 'styled-components';
 import Section from '../Auxiliary/Section';
 import ExperienceItem from './ExperienceItem';
 import EducationItem from './EducationItem';
+import { PersonalData, ExperienceData, EducationData } from '../../types/data';
+
+interface Props {
+  personalData: PersonalData;
+  experienceData: ExperienceData;
+  educationData: EducationData;
+}
 
 const MainWrapper = styled.div`
   display: flex;
@@ -18,7 +25,7 @@ const MainWrapper = styled.div`
 
 const Summary = styled.div``;
 
-function Main({ personalData, experienceData, educationData }) {
+function Main({ personalData, experienceData, educationData }: Props) {
   const experienceItems = experienceData.map((itemData) => {
     return <ExperienceItem key={itemData.id} itemData={itemData} />;
   });

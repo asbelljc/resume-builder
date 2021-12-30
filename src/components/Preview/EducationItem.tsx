@@ -1,5 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { EducationItemData } from '../../types/data';
+
+interface Props {
+  itemData: EducationItemData;
+}
 
 const EducationItemWrapper = styled.div`
   display: flex;
@@ -26,7 +31,7 @@ const SchoolAndDateWrapper = styled.div`
   }
 `;
 
-function EducationItem({ itemData }) {
+function EducationItem({ itemData }: Props) {
   return (
     <EducationItemWrapper>
       <SchoolAndDateWrapper>

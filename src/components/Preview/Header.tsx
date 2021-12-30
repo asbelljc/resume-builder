@@ -1,5 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { PersonalData } from '../../types/data';
+
+interface Props {
+  personalData: PersonalData;
+}
 
 const HeaderWrapper = styled.div`
   display: flex;
@@ -28,7 +33,7 @@ const ContactWrapper = styled.div`
   }
 `;
 
-function Header({ personalData }) {
+function Header({ personalData }: Props) {
   const {
     firstName,
     lastName,

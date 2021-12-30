@@ -1,5 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { ExperienceItemData } from '../../types/data';
+
+interface Props {
+  itemData: ExperienceItemData;
+}
 
 const ExperienceItemWrapper = styled.div`
   display: flex;
@@ -26,7 +31,7 @@ const TitleAndDateWrapper = styled.div`
   }
 `;
 
-function ExperienceItem({ itemData }) {
+function ExperienceItem({ itemData }: Props) {
   return (
     <ExperienceItemWrapper>
       <TitleAndDateWrapper>

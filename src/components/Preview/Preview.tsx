@@ -2,6 +2,13 @@ import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import Header from './Header';
 import Main from './Main';
+import { ResumeData } from '../../types/data';
+
+interface Props {
+  resumeData: ResumeData;
+}
+
+type Ref = React.ForwardedRef<HTMLDivElement>;
 
 const PreviewWrapper = styled.div`
   width: 8.5in;
@@ -20,7 +27,7 @@ const PreviewWrapper = styled.div`
 `;
 
 // react-to-print requires forwardRef for use on functional components
-const Preview = forwardRef(({ resumeData }, ref) => {
+const Preview = forwardRef(({ resumeData }: Props, ref: Ref) => {
   return (
     <PreviewWrapper ref={ref}>
       <Header personalData={resumeData.personal} />
