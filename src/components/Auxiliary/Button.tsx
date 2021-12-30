@@ -1,7 +1,15 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const ButtonWrapper = styled.button`
+interface Props {
+  addBtn?: boolean;
+  deleteBtn?: boolean;
+  resetBtn?: boolean;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  children: string;
+}
+
+const ButtonWrapper = styled.button<Props>`
   border: 4px solid white;
   color: ${({ theme }) => theme.colors.primary};
   background-color: transparent;
@@ -75,7 +83,7 @@ const ButtonWrapper = styled.button`
     `}
 `;
 
-function Button({ addBtn, deleteBtn, resetBtn, onClick, children }) {
+function Button({ addBtn, deleteBtn, resetBtn, onClick, children }: Props) {
   return (
     <ButtonWrapper
       addBtn={addBtn} // If these props are specified, they overwrite the default button style.

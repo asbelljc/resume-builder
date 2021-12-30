@@ -1,6 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
+interface Props {
+  onChange: React.ChangeEventHandler<HTMLTextAreaElement>;
+  placeholder: string;
+  name: string;
+  value: string;
+}
+
 const TextAreaWrapper = styled.textarea`
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
@@ -16,14 +23,14 @@ const TextAreaWrapper = styled.textarea`
   }
 `;
 
-function TextArea({ onChange, placeholder, name, value }) {
+function TextArea({ onChange, placeholder, name, value }: Props) {
   return (
     <TextAreaWrapper
       onChange={onChange}
       placeholder={placeholder}
       name={name}
       value={value}
-      rows="5"
+      rows={5}
     />
   );
 }

@@ -1,6 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { CSSTransition } from 'react-transition-group';
+
+interface Props {
+  children: React.ReactNode;
+  isMounted: boolean;
+}
 
 const ItemCardWrapper = styled.div`
   position: relative;
@@ -30,7 +35,7 @@ const ItemCardWrapper = styled.div`
   }
 `;
 
-function ItemCard({ children, isMounted }) {
+function ItemCard({ children, isMounted }: Props) {
   return (
     <CSSTransition
       in={isMounted}

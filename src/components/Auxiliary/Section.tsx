@@ -1,6 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
+interface Props {
+  title: string;
+  children: React.ReactNode;
+}
+
 const SectionWrapper = styled.section`
   display: flex;
   flex-direction: column;
@@ -13,7 +18,7 @@ const SectionWrapper = styled.section`
   }
 `;
 
-function Section({ title, children }) {
+function Section({ title, children }: Props) {
   return (
     <SectionWrapper>
       <h2>{title}</h2>
