@@ -2,8 +2,17 @@ import React, { useEffect, useState } from 'react';
 import ItemCard from '../Auxiliary/ItemCard';
 import TextInput from '../Auxiliary/TextInput';
 import Button from '../Auxiliary/Button';
+import { EducationItemData } from '../../data/interfaces';
 
-function ExperienceItem({ id, itemData, onChange, onDelete }) {
+interface Props {
+  id: string;
+  itemData: EducationItemData;
+  onChange: React.ChangeEventHandler<HTMLInputElement> &
+    ((e: React.ChangeEvent, id: string) => void);
+  onDelete: React.MouseEventHandler<HTMLButtonElement> & ((id: string) => void);
+}
+
+function EducationItem({ id, itemData, onChange, onDelete }: Props) {
   const [mountState, setMountState] = useState(false);
 
   useEffect(() => {
@@ -24,15 +33,21 @@ function ExperienceItem({ id, itemData, onChange, onDelete }) {
       </Button>
       <TextInput
         onChange={(e) => onChange(e, id)}
-        placeholder="Title / Role"
-        name="title"
-        value={itemData.title}
+        placeholder="School"
+        name="school"
+        value={itemData.school}
       />
       <TextInput
         onChange={(e) => onChange(e, id)}
-        placeholder="Company"
-        name="company"
-        value={itemData.company}
+        placeholder="Degree / Certificate / Diploma"
+        name="degree"
+        value={itemData.degree}
+      />
+      <TextInput
+        onChange={(e) => onChange(e, id)}
+        placeholder="Concentration"
+        name="concentration"
+        value={itemData.concentration}
       />
       <TextInput
         onChange={(e) => onChange(e, id)}
@@ -56,4 +71,4 @@ function ExperienceItem({ id, itemData, onChange, onDelete }) {
   );
 }
 
-export default ExperienceItem;
+export default EducationItem;

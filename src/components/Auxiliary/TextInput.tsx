@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 interface Props {
-  onChange: React.ChangeEventHandler<HTMLInputElement>;
+  onChange: React.ChangeEventHandler<HTMLInputElement> &
+    ((e: React.ChangeEvent, id: string) => void);
   placeholder: string;
   name: string;
   value: string;
