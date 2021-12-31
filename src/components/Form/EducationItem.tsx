@@ -3,13 +3,13 @@ import ItemCard from '../Auxiliary/ItemCard';
 import TextInput from '../Auxiliary/TextInput';
 import Button from '../Auxiliary/Button';
 import { EducationItemData } from '../../types/data';
+import { ChangeHandler, DeleteHandler } from '../../types/formHandlers';
 
 interface Props {
   id: string;
   itemData: EducationItemData;
-  onChange: React.ChangeEventHandler<HTMLInputElement> &
-    ((e: React.ChangeEvent, id: string) => void);
-  onDelete: React.MouseEventHandler<HTMLButtonElement> & ((id: string) => void);
+  onChange: ChangeHandler;
+  onDelete: DeleteHandler;
 }
 
 function EducationItem({ id, itemData, onChange, onDelete }: Props) {

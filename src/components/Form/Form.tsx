@@ -21,7 +21,7 @@ interface Props {
   onAddEducation: AddHandler;
   onDeleteEducation: DeleteHandler;
   onLoadSample: () => void;
-  onMakePdf: () => void;
+  onMakePdf: (() => void) | undefined;
   onReset: () => void;
 }
 

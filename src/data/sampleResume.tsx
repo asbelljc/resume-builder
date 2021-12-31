@@ -1,6 +1,7 @@
 import { v4 as uuid } from 'uuid';
+import { ResumeData } from '../types/data';
 
-const sampleResume = {
+const sampleResume: ResumeData = {
   personal: {
     firstName: 'Steven',
     lastName: 'Careers',

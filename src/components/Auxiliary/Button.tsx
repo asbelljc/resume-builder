@@ -5,7 +5,10 @@ interface Props {
   addBtn?: boolean;
   deleteBtn?: boolean;
   resetBtn?: boolean;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  onClick:
+    | React.MouseEventHandler<HTMLButtonElement>
+    | (() => void)
+    | undefined;
   children: string;
 }
 

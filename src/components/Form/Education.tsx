@@ -3,13 +3,17 @@ import EducationItem from './EducationItem';
 import Section from '../Auxiliary/Section';
 import Button from '../Auxiliary/Button';
 import { EducationData } from '../../types/data';
+import {
+  ChangeHandler,
+  AddHandler,
+  DeleteHandler,
+} from '../../types/formHandlers';
 
 interface Props {
   educationData: EducationData;
-  onChange: React.ChangeEventHandler<HTMLInputElement> &
-    ((e: React.ChangeEvent, id: string) => void);
-  onAdd: React.MouseEventHandler<HTMLButtonElement>;
-  onDelete: React.MouseEventHandler<HTMLButtonElement> & ((id: string) => void);
+  onChange: ChangeHandler;
+  onAdd: AddHandler;
+  onDelete: DeleteHandler;
 }
 
 function Education({ educationData, onChange, onAdd, onDelete }: Props) {

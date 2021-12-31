@@ -3,13 +3,13 @@ import ItemCard from '../Auxiliary/ItemCard';
 import TextInput from '../Auxiliary/TextInput';
 import Button from '../Auxiliary/Button';
 import { ExperienceItemData } from '../../types/data';
+import { ChangeHandler, DeleteHandler } from '../../types/formHandlers';
 
 interface Props {
   id: string;
   itemData: ExperienceItemData;
-  onChange: React.ChangeEventHandler<HTMLInputElement> &
-    ((e: React.ChangeEvent, id: string) => void);
-  onDelete: React.MouseEventHandler<HTMLButtonElement> & ((id: string) => void);
+  onChange: ChangeHandler;
+  onDelete: DeleteHandler;
 }
 
 function ExperienceItem({ id, itemData, onChange, onDelete }: Props) {

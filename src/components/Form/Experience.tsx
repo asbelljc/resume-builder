@@ -3,13 +3,17 @@ import ExperienceItem from './ExperienceItem';
 import Section from '../Auxiliary/Section';
 import Button from '../Auxiliary/Button';
 import { ExperienceData } from '../../types/data';
+import {
+  ChangeHandler,
+  AddHandler,
+  DeleteHandler,
+} from '../../types/formHandlers';
 
 interface Props {
   experienceData: ExperienceData;
-  onChange: React.ChangeEventHandler<HTMLInputElement> &
-    ((e: React.ChangeEvent, id: string) => void);
-  onAdd: React.MouseEventHandler<HTMLButtonElement>;
-  onDelete: React.MouseEventHandler<HTMLButtonElement> & ((id: string) => void);
+  onChange: ChangeHandler;
+  onAdd: AddHandler;
+  onDelete: DeleteHandler;
 }
 
 function Experience({ experienceData, onChange, onAdd, onDelete }: Props) {

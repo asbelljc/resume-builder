@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import { v4 as uuid } from 'uuid';
 import { useReactToPrint } from 'react-to-print';
@@ -25,10 +25,11 @@ const MainWrapper = styled.main`
 function Main() {
   const [resumeData, setResumeData] = useState(emptyResume);
 
-  const componentRef = useRef();
+  const componentRef = useRef<HTMLDivElement>(null);
 
-  const handleChangePersonal = (e) => {
-    const { name, value } = e.target;
+  const handleChangePersonal = (e: React.ChangeEvent): void => {
+    const { name, value } =
+      (e.target as HTMLInputElement) || HTMLTextAreaElement;
 
     setResumeData((prevState) => {
       return {
@@ -41,8 +42,8 @@ function Main() {
     });
   };
 
-  const handleChangeExperience = (e, id) => {
-    const { name, value } = e.target;
+  const handleChangeExperience = (e: React.ChangeEvent, id?: string): void => {
+    const { name, value } = e.target as HTMLInputElement;
 
     setResumeData((prevState) => {
       const updatedExperience = prevState.experience.map((experienceItem) => {
@@ -57,7 +58,7 @@ function Main() {
     });
   };
 
-  const handleAddExperience = () => {
+  const handleAddExperience = (): void => {
     setResumeData((prevState) => {
       return {
         ...prevState,
@@ -76,7 +77,7 @@ function Main() {
     });
   };
 
-  const handleDeleteExperience = (id) => {
+  const handleDeleteExperience = (id: string): void => {
     setResumeData((prevState) => {
       const updatedExperience = prevState.experience.filter(
         (experienceItem) => experienceItem.id !== id
@@ -85,8 +86,8 @@ function Main() {
     });
   };
 
-  const handleChangeEducation = (e, id) => {
-    const { name, value } = e.target;
+  const handleChangeEducation = (e: React.ChangeEvent, id?: string): void => {
+    const { name, value } = e.target as HTMLInputElement;
 
     setResumeData((prevState) => {
       const updatedEducation = prevState.education.map((educationItem) => {
@@ -101,7 +102,7 @@ function Main() {
     });
   };
 
-  const handleAddEducation = () => {
+  const handleAddEducation = (): void => {
     setResumeData((prevState) => {
       return {
         ...prevState,
@@ -121,7 +122,7 @@ function Main() {
     });
   };
 
-  const handleDeleteEducation = (id) => {
+  const handleDeleteEducation = (id: string): void => {
     setResumeData((prevState) => {
       const updatedEducation = prevState.education.filter(
         (educationItem) => educationItem.id !== id
@@ -130,15 +131,17 @@ function Main() {
     });
   };
 
-  const handleLoadSample = () => {
+  const handleLoadSample = (): void => {
     setResumeData(sampleResume);
   };
 
-  const handleReset = () => {
+  const handleReset = (): void => {
     setResumeData(emptyResume);
   };
 
-  const makePdf = useReactToPrint({ content: () => componentRef.current });
+  const makePdf: (() => void) | undefined = useReactToPrint({
+    content: () => componentRef.current,
+  });
 
   return (
     <MainWrapper>
