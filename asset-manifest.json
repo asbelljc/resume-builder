@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/resume-builder/static/js/main.c3e31b71.chunk.js",
-    "main.js.map": "/resume-builder/static/js/main.c3e31b71.chunk.js.map",
+    "main.js": "/resume-builder/static/js/main.0ac756c2.chunk.js",
+    "main.js.map": "/resume-builder/static/js/main.0ac756c2.chunk.js.map",
     "runtime-main.js": "/resume-builder/static/js/runtime-main.d391c743.js",
     "runtime-main.js.map": "/resume-builder/static/js/runtime-main.d391c743.js.map",
     "static/js/2.cf9c5b38.chunk.js": "/resume-builder/static/js/2.cf9c5b38.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.d391c743.js",
     "static/js/2.cf9c5b38.chunk.js",
-    "static/js/main.c3e31b71.chunk.js"
+    "static/js/main.0ac756c2.chunk.js"
   ]
 }
